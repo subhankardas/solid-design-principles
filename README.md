@@ -43,6 +43,19 @@ All subclasses must, therefore, operate in the same manner as their base classes
 2. Easier to maintain
 3. Lower coupling
 
+#### I – Interface Segregation Principle
+ISP guides us to create multiple, smaller, cohesive interfaces. Larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes only needs to be concerned about the methods that are of interest to them. So basically, the interface segregation principles as you prefer the interfaces, which are small but client specific instead of monolithic and bigger interface.
+
+**“Don’t depend on things you don’t need”**
+
+Single Responsibility Principle is concerned with classes, while the Interface Segregation Principle is concerned with interfaces. 
+
+**Benefits:**
+1. Increased code readability
+2. Easy to implement and maintain
+3. Better organization of code
+4. Don’t need to throw exceptions unnecessarily
+
 #### References
 1. [https://www.baeldung.com/solid-principles](https://www.baeldung.com/solid-principles)
 2. [https://www.javatpoint.com/solid-principles-java](https://www.javatpoint.com/solid-principles-java)
