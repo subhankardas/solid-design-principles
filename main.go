@@ -9,6 +9,7 @@ import (
 func main() {
 	SingleResponsibilityPrinciple()
 	OpenClosedPrinciple()
+	LiskovSubstitutionPrinciple()
 }
 
 func SingleResponsibilityPrinciple() {
@@ -36,4 +37,22 @@ func OpenClosedPrinciple() {
 	cart = &c.ShoppingCart{}
 	cart.Prices = []float32{5.6, 7.8, 9.0}
 	cart.CheckoutV2(&c.Cash{})
+}
+
+func LiskovSubstitutionPrinciple() {
+	orderV1 := &c.Order{}
+	orderV1.GetDeliveryAddress()
+	specialV1 := &c.SpecialOrder{}
+	specialV1.GetDeliveryAddress()
+	giftCardV1 := &c.GiftCardOrder{}
+	giftCardV1.GetDeliveryAddress() // !!! NO OUTPUT - GIFT CARDS DON'T HAVE ADDRESSES !!!
+
+	// orderV2 := &c.OrderV2{}
+	// orderV2.GetDeliveryAddress() // ORDER V2 DOES NOT HAVE GET ADDRESS FEATURE
+
+	specialV2 := &c.SpecialOrderV2{}
+	specialV2.GetDeliveryAddress()
+
+	giftCardV2 := &c.GiftCardOrderV2{}
+	giftCardV2.ActivateService()
 }

@@ -13,6 +13,7 @@ I – Interface Segregation Principle
 
 D – Dependency Inversion Principle
 
+
 #### S – Single Responsibility Principle 
 The single responsibility principle states that a class should only have one responsibility. Furthermore, it should only have one reason to change.
 
@@ -28,3 +29,16 @@ The single responsibility principle states that a class should only have one res
 The Open Closed Principle(OCP) states that classes should be open for extension but closed for modification. “*Open to extension*” means that you should design your classes so that new functionality can be added as new requirements are generated. “*Closed for modification*” means that once you have developed a class you should never modify it, except to correct bugs.
 In doing so, we stop ourselves from modifying existing code and causing potential new bugs in an otherwise happy application.
 Of course, the one exception to the rule is when fixing bugs in existing code.
+
+#### L – Liskov Substitution Principle
+Introduced by Barbara Liskov, the Liskov Substitution Principle (LSP) states that an object of a superclass should be replaceable by objects of its subclasses without causing issues in the code. Therefore, a child class should never change the characteristics of its parent class (such as the argument list and return types). Basically, derived classes should never do less than their base class.
+
+**“Derived types must be completely substitutable for their base types”**
+
+All subclasses must, therefore, operate in the same manner as their base classes. The specific functionality of the subclass may be different but must conform to the expected behavior of the base class. To be a true behavioral subtype, the subclass must not only implement the base class’s methods and properties, but also conform to its implied behavior.
+
+#### References
+1. [https://www.baeldung.com/solid-principles](https://www.baeldung.com/solid-principles)
+2. [https://www.javatpoint.com/solid-principles-java](https://www.javatpoint.com/solid-principles-java)
+3. [https://www.jrebel.com/blog/solid-principles-in-java](https://www.jrebel.com/blog/solid-principles-in-java)
+4. [https://javatechonline.com/solid-principles-the-liskov-substitution-principle/](https://javatechonline.com/solid-principles-the-liskov-substitution-principle/)

@@ -22,6 +22,7 @@ func acceptCash(amount float32) {
 }
 
 // ----- REWRITING THE ABOVE CODE FOLLOWING OPEN-CLOSED PRINCIPLE ----- //
+
 type PaymentMethod interface{ acceptPayment(amount float32) } // Payment method declaration
 type Cash struct{}                                            // Cash payment method
 type CreditCard struct{}                                      // Credit card method
