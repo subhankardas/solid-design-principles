@@ -21,6 +21,8 @@ The single responsibility principle states that a class should only have one res
 2. **Lower coupling** – Less functionality in a single class will have fewer dependencies.
 3. **Organization** – Smaller, well-organized classes are easier to search than monolithic ones.
 
+[EXAMPLE CODE SNIPPET](code/1.single_responsibility_principle.go)
+
 #### O – Open Closed Principle (OCP)
 The Open Closed Principle(OCP) states that classes should be open for extension but closed for modification. “*Open to extension*” means that you should design your classes so that new functionality can be added as new requirements are generated. “*Closed for modification*” means that once you have developed a class you should never modify it, except to correct bugs.
 In doing so, we stop ourselves from modifying existing code and causing potential new bugs in an otherwise happy application.
@@ -30,6 +32,8 @@ Of course, the one exception to the rule is when fixing bugs in existing code.
 1. **Easier extensibility** - Offers a better extensibility to your code.
 2. **Easier to maintain** - It suggests using interfaces. Interfaces in code offers an additional level of abstraction which in turn enables loose coupling. The implementations of an interface are independent of each other and don’t need to share any code.
 3. **Flexibility** - if any change request arises in future, your code will be more flexible to extend.
+
+[EXAMPLE CODE SNIPPET](code/2.open_closed_principle.go)
 
 #### L – Liskov Substitution Principle
 Introduced by Barbara Liskov, the Liskov Substitution Principle (LSP) states that an object of a superclass should be replaceable by objects of its subclasses without causing issues in the code. Therefore, a child class should never change the characteristics of its parent class (such as the argument list and return types). Basically, derived classes should never do less than their base class.
@@ -43,6 +47,8 @@ All subclasses must, therefore, operate in the same manner as their base classes
 2. Easier to maintain
 3. Lower coupling
 
+[EXAMPLE CODE SNIPPET](code/3.liskov_substitution_principle.go)
+
 #### I – Interface Segregation Principle
 ISP guides us to create multiple, smaller, cohesive interfaces. Larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes only needs to be concerned about the methods that are of interest to them. So basically, the interface segregation principles as you prefer the interfaces, which are small but client specific instead of monolithic and bigger interface.
 
@@ -54,7 +60,22 @@ Single Responsibility Principle is concerned with classes, while the Interface S
 1. Increased code readability
 2. Easy to implement and maintain
 3. Better organization of code
-4. Don’t need to throw exceptions unnecessarily
+4. Don’t need to throw exceptions unnecessarily such as method not implemented exception
+
+[EXAMPLE CODE SNIPPET](code/4.interface_segregation_principle.go)
+
+#### D – Dependency Inversion Principle
+The Dependency Inversion Principle (DIP) states that high-level modules should not depend upon low-level modules, they should depend on abstractions like interfaces and abstract classes.
+Secondly, abstractions should not depend upon details, details should depend upon abstractions. The idea is that we isolate our class behind a boundary formed by the abstractions it depends on.
+If all the details behind those abstractions change, then our class is still safe.
+
+**Benefits:**
+1. Keeps your code loosely coupled
+2. Easy to maintain
+3. Better code reusability
+4. Allows us to test things in isolation
+
+[EXAMPLE CODE SNIPPET](code/5.dependency_inversion_principle.go)
 
 #### References
 1. [https://www.baeldung.com/solid-principles](https://www.baeldung.com/solid-principles)

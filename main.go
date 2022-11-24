@@ -10,6 +10,7 @@ func main() {
 	SingleResponsibilityPrinciple()
 	OpenClosedPrinciple()
 	LiskovSubstitutionPrinciple()
+	DependencyInversionPrinciple()
 }
 
 func SingleResponsibilityPrinciple() {
@@ -55,4 +56,22 @@ func LiskovSubstitutionPrinciple() {
 
 	giftCardV2 := &c.GiftCardOrderV2{}
 	giftCardV2.ActivateService()
+}
+
+func DependencyInversionPrinciple() {
+	customer := c.NewUserV2(
+		&c.CustomerProfileV2{}, // CREATE USER WITH CUSTOMER PROFILE AND PURCHASE REFERENCES
+		&c.Purchase{},          // POSSIBLE SINCE THESE ARE IMPL. OF INTERFACE PROFILE AND HISTORY
+	)
+
+	fmt.Println("customer email       :", customer.Profile.GetEmail())
+	fmt.Println("customer purchases   :", customer.History.GetHistory())
+
+	seller := c.NewUserV2(
+		&c.SellerProfile{}, // CREATE USER WITH SELLER PROFILE AND SALES REFERENCES
+		&c.Sales{},         // POSSIBLE SINCE THERE ARE IMPL. OF INTERFACE PROFILE AND HISTORY
+	)
+
+	fmt.Println("seller contact       :", seller.Profile.GetEmail())
+	fmt.Println("seller sales history :", seller.History.GetHistory())
 }
